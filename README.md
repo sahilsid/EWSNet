@@ -45,5 +45,4 @@ The arguments denote :
 The utilities of other files are summrized below: 
 - **main.ipynb** : Use to run experiments for training the EWSNet models
 - **generic_ews.ipynb** : Use to run experiments for training the Classical ML models
-- **generic_ews.ipynb** : Use to run experiments for training the Classical ML models
 - **simulate_data.m**    : Use to generate simulated time series data 
