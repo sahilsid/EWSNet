@@ -39,10 +39,15 @@ class EWSNet():
         return model
 
     def load_model(self,weight_dir,prefix,suffix):
+        print("=="*30)
         for i in range(self.ensemble):
-            if(os.path.exists("{}/{}{}{}".format(weight_dir,prefix,i,suffix))):
-                self.model[i] = tf.keras.models.load_model("{}/{}{}{}".format(weight_dir,prefix,i,suffix))
-                
+            print("Loading Model : {}/{}{}{}".format(weight_dir,prefix,i+1,suffix))
+            if(os.path.exists("{}/{}{}{}".format(weight_dir,prefix,i+1,suffix))):
+                self.model[i] = tf.keras.models.load_model("{}/{}{}{}".format(weight_dir,prefix,i+1,suffix))
+            else:
+                raise NameError
+        print("=="*30)
+
     def predict(self,x):
         x = np.array(x)
         x = np.reshape(x,(1,1,x.shape[0]))
