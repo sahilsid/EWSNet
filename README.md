@@ -23,6 +23,8 @@ To test the ewsnet model on custom time series data, create an instance of EWSNe
 
 
 ```python
+import os
+import numpy as np
 from ewsnet import EWSNet
 
 dataset = "W"
