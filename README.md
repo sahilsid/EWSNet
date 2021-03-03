@@ -3,18 +3,18 @@
 Create a new conda environment with tensorflow using 
   - If you have a CPU machine
 ```shell
-        conda create -n ENV_NAME tensorflow
+conda create -n ENV_NAME tensorflow
 ```
 - If you have a gpu machine
 
 ```shell
-        conda create -n ENV_NAME tensorflow-gpu
+conda create -n ENV_NAME tensorflow-gpu
 ```
 
 Activate the environment and install  the required packages
 ```shell
-       conda activate ENV_NAME
-       pip install -r requirements.txt 
+conda activate ENV_NAME
+pip install -r requirements.txt 
 	   
 ```
 Download model weights from  [ewsnet-weights](https://drive.google.com/file/d/1-aY2MepouLQdMSNkYD6jgSedwFXB8BUP/view?usp=sharing "ewsnet-weights") and extract it inside the weights folder.
