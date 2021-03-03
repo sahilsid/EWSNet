@@ -23,17 +23,17 @@ To test the ewsnet model on custom time series data, create an instance of EWSNe
 
 
 ```python
-    from ewsnet import EWSNet
-	
-	dataset = "W"
-    ensemble = 25
-	weight_dir = "./weights/Pretrained"
-	weight_dir = os.path.join(weight_dir,"Dataset-{}".format(dataset))
-	
-    ewsnet = EWSNet(ensemble=ensemble, weight_dir=weight_dir)
-   
-   x = np.random.randint(1,2,(20,))
-	print(ewsnet.predict(x))
+from ewsnet import EWSNet
+
+dataset = "W"
+ensemble = 25
+weight_dir = "./weights/Pretrained"
+weight_dir = os.path.join(weight_dir,"Dataset-{}".format(dataset))
+
+ewsnet = EWSNet(ensemble=ensemble, weight_dir=weight_dir)
+
+x = np.random.randint(1,2,(20,))
+print(ewsnet.predict(x))
 ```
 
 The arguments denote :
