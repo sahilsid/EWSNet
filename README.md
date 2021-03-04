@@ -44,7 +44,4 @@ The arguments denote :
 - ***prefix***         : The prefix for individual weight filenames. Defaults ""
 - ***suffix***         : The suffix for individual weight filenames. Defaults ".h5"
 
-The utilities of other files are summrized below: 
-- **main.ipynb** : Use to run experiments for training the EWSNet models
-- **generic_ews.ipynb** : Use to run experiments for training the Classical ML models
 
