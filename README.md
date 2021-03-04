@@ -41,7 +41,7 @@ print(ewsnet.predict(x))
 The arguments denote :
 - ***ensemble*** : The no. of trained models to average the prediction over. (between 1 and 25)
 - ***weight_dir*** : The directory which contains the weights for Dataset-C and Dataset-W 
-- ***prefix***         : The prefix for individual weight filenames. Defaults ""
+- ***prefix***         : The prefix for individual weight filenames. Defaults to empty prefix
 - ***suffix***         : The suffix for individual weight filenames. Defaults ".h5"
 
 
