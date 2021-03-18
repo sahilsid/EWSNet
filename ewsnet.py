@@ -53,12 +53,12 @@ class EWSNet():
         x = np.reshape(x,(1,1,x.shape[0]))
         predictions = np.array([self.model[i](x)[0] for i in range(self.ensemble)])
         predictions = np.mean(predictions,axis=0)
-        predictions = {
+        prediction_probability = {
             "No Transition"      :predictions[0],
             "Smooth Transition"  :predictions[1],
             "Critical Transition":predictions[2],
         }
-        return self.labels[np.argmax(predictions)],predictions
+        return self.labels[np.argmax(predictions)],prediction_probability
 
 if __name__ == '__main__':
     
@@ -69,5 +69,5 @@ if __name__ == '__main__':
     ensemble   = 25
 
     ewsnet     = EWSNet(ensemble=ensemble, weight_dir=os.path.join(weight_dir,"Dataset-{}".format(dataset)), prefix=prefix,suffix=suffix)
-    x = np.random.randint(1,2,(20,))
+    x = np.random.randint(1,100,(20,))
     print(ewsnet.predict(x))
