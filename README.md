@@ -1,5 +1,8 @@
-# EWSNet
+# EWSNet 
 
+[![DOI](https://zenodo.org/badge/338530625.svg)](https://zenodo.org/badge/latestdoi/338530625)
+
+### Setup Instructions
 Create a new conda environment with tensorflow using 
   - If you have a CPU machine
 ```shell
@@ -17,6 +20,8 @@ conda activate ENV_NAME
 pip install -r requirements.txt 
 	   
 ```
+
+### Testing for transitions with EWSNet
 Download model weights from  [ewsnet-weights](https://drive.google.com/file/d/1-aY2MepouLQdMSNkYD6jgSedwFXB8BUP/view?usp=sharing "ewsnet-weights") and extract it inside the weights folder.
 
 To test the ewsnet model on custom time series data, create an instance of EWSNet class as provided in ewsnet.py, passing the weight directory (chose any of Dataset-C or Dataset-W ) and call the predict function on the input. Here is a sample code 
