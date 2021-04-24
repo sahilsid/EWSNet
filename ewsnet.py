@@ -69,5 +69,5 @@ if __name__ == '__main__':
     ensemble   = 25
 
     ewsnet     = EWSNet(ensemble=ensemble, weight_dir=os.path.join(weight_dir,"Dataset-{}".format(dataset)), prefix=prefix,suffix=suffix)
-    x = np.random.randint(1,100,(20,))
+    x = np.random.randint(1,5,(20,))
     print(ewsnet.predict(x))

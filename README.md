@@ -44,4 +44,30 @@ The arguments denote :
 - ***prefix***         : The prefix for individual weight filenames. Defaults to empty prefix
 - ***suffix***         : The suffix for individual weight filenames. Defaults ".h5"
 
+----
 
+Real-world paleoclimatic and ecological data are added in the *data* folder for testing. You may use the code snippet below to load them and predict using ewsnet. 
+
+```python
+import numpy as np
+import pandas as pd 
+from  ewsnet import EWSNet
+import os
+
+weight_dir = "./weights/Pretrained"
+dataset    = "W"
+prefix     = ""
+suffix     = ".h5"
+ensemble   = 25
+
+ewsnet     = EWSNet(ensemble=ensemble, weight_dir=os.path.join(weight_dir,"Dataset-{}".format(dataset)), prefix=prefix,suffix=suffix)
+
+data_dir = "./data"
+for filename in os.listdir(data_dir):
+    series = np.loadtxt(os.path.join(data_dir,filename))
+    name = filename.split(".")[0]
+    print("\n\n==>Testing Data : ",name)
+    label,prob = ewsnet.predict(series)
+    print("----- Predicted Label : ",label)
+    print("----- Prediction Probability : \n \t ",prob,"\n")
+```
