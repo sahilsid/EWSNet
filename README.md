@@ -1,5 +1,8 @@
-# EWSNet
+# EWSNet 
 
+[![DOI](https://zenodo.org/badge/338530625.svg)](https://zenodo.org/badge/latestdoi/338530625)
+
+### Setup Instructions
 Create a new conda environment with tensorflow using 
   - If you have a CPU machine
 ```shell
@@ -17,6 +20,15 @@ conda activate ENV_NAME
 pip install -r requirements.txt 
 	   
 ```
+
+Alternatively use can also setup a conda environment with all the required packages using the *environment.yml* file.
+```shell
+
+conda env create -f environment.yml
+	   
+```
+
+### Testing for transitions with EWSNet
 Download model weights from  [ewsnet-weights](https://drive.google.com/file/d/1-aY2MepouLQdMSNkYD6jgSedwFXB8BUP/view?usp=sharing "ewsnet-weights") and extract it inside the weights folder.
 
 To test the ewsnet model on custom time series data, create an instance of EWSNet class as provided in ewsnet.py, passing the weight directory (chose any of Dataset-C or Dataset-W ) and call the predict function on the input. Here is a sample code 
@@ -41,10 +53,33 @@ print(ewsnet.predict(x))
 The arguments denote :
 - ***ensemble*** : The no. of trained models to average the prediction over. (between 1 and 25)
 - ***weight_dir*** : The directory which contains the weights for Dataset-C and Dataset-W 
-- ***prefix***         : The prefix for individual weight filenames
-- ***suffix***         : The suffix for individual weight filenames
+- ***prefix***         : The prefix for individual weight filenames. Defaults to empty prefix
+- ***suffix***         : The suffix for individual weight filenames. Defaults ".h5"
 
-The utilities of other files are summrized below: 
-- **main.ipynb** : Use to run experiments for training the EWSNet models
-- **generic_ews.ipynb** : Use to run experiments for training the Classical ML models
-- **simulate_data.m**    : Use to generate simulated time series data 
+----
+
+Real-world paleoclimatic and ecological data are added in the *data* folder for testing. You may use the code snippet below to load them and predict using ewsnet. 
+
+```python
+import numpy as np
+import pandas as pd 
+from  ewsnet import EWSNet
+import os
+
+weight_dir = "./weights/Pretrained"
+dataset    = "W"
+prefix     = ""
+suffix     = ".h5"
+ensemble   = 25
+
+ewsnet     = EWSNet(ensemble=ensemble, weight_dir=os.path.join(weight_dir,"Dataset-{}".format(dataset)), prefix=prefix,suffix=suffix)
+
+data_dir = "./data"
+for filename in os.listdir(data_dir):
+    series = np.loadtxt(os.path.join(data_dir,filename))
+    name = filename.split(".")[0]
+    print("\n\n==>Testing Data : ",name)
+    label,prob = ewsnet.predict(series)
+    print("----- Predicted Label : ",label)
+    print("----- Prediction Probability : \n \t ",prob,"\n")
+```
