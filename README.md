@@ -94,12 +94,14 @@ The arguments denote :
 
 ----
 
-Real-world paleoclimatic and ecological data are added in the *data* folder for testing. You may use the code snippet below to load them and predict using ewsnet. 
+### Real-World Data
+
+A few Real-world paleoclimatic and ecological data are added in the *data* folder for testing. You may use the code snippet below to load them and predict using ewsnet. 
 
 ```python
 import numpy as np
 import pandas as pd 
-from  ewsnet import EWSNet
+from src.inference.ewsnet import EWSNet
 import os
 
 weight_dir = "./weights/Pretrained"
