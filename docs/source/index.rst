@@ -25,15 +25,15 @@ Data Generation and Preprocessing
 .. mat:autofunction:: src.generate_data.model1
 
 
-Data Loading
+Data Loading & Utils
 =====================
 .. automodule:: src.utils.generic_utils
-   :members:
+   :members: load_dataset_at, plot_roc
 
 Model Training and Evaluation
 ==============================
 .. automodule:: src.model_training.exp_utils
-   :members:
+   :members: train_model, evaluate_model
 
 
 Indices and tables
