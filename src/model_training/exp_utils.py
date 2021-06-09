@@ -99,10 +99,8 @@ def evaluate_model(model: Model, dataset_id, dataset_prefix, batch_size=128, tes
             from the input signal.
         normalize_timeseries: Bool / Integer. Determines whether to normalize
             the timeseries.
-
             If False, does not normalize the time series.
-            If True / int not equal to 2, performs standard sample-wise
-                z-normalization.
+            If True / int not equal to 2, performs standard sample-wise z-normalization.
             If 2: Performs full dataset z-normalization.
 
     Returns:
