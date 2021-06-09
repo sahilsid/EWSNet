@@ -21,6 +21,13 @@ pip install -r requirements.txt
 	   
 ```
 
+Alternatively use can also setup a conda environment with all the required packages using the *environment.yml* file.
+```shell
+
+conda env create -f environment.yml
+	   
+```
+
 ### Testing for transitions with EWSNet
 Download model weights from  [ewsnet-weights](https://drive.google.com/file/d/1-aY2MepouLQdMSNkYD6jgSedwFXB8BUP/view?usp=sharing "ewsnet-weights") and extract it inside the weights folder.
 
