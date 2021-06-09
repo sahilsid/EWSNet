@@ -31,7 +31,7 @@ autoclass_content = 'both'
 extensions = [
     "sphinx.ext.napoleon",
     'sphinxcontrib.matlab',
-    'rinoh.frontend.sphinx',
+    # 'rinoh.frontend.sphinx',
     "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
     "sphinx.ext.intersphinx",
