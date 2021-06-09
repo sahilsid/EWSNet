@@ -37,7 +37,7 @@ To test the ewsnet model on custom time series data, create an instance of EWSNe
 ```python
 import os
 import numpy as np
-from ewsnet import EWSNet
+from src.inference.ewsnet import EWSNet
 
 dataset = "W"
 ensemble = 25
@@ -55,6 +55,31 @@ The arguments denote :
 - ***weight_dir*** : The directory which contains the weights for Dataset-C and Dataset-W 
 - ***prefix***         : The prefix for individual weight filenames. Defaults to empty prefix
 - ***suffix***         : The suffix for individual weight filenames. Defaults ".h5"
+
+----
+### Finetuning EWSNet
+
+To finetune the ewsnet model on custom time series data, create an instance of EWSNet class as provided in ewsnet.py, passing the weight directory (chose any of Dataset-C or Dataset-W ) and call the finetune() function, by providing the dataset and other training parameters. Here is a sample code 
+
+
+```python
+import os
+import numpy as np
+from src.inference.ewsnet import EWSNet
+
+dataset = "W"
+ensemble = 25
+weight_dir = "./weights/Pretrained"
+weight_dir = os.path.join(weight_dir,"Dataset-{}".format(dataset))
+
+ewsnet = EWSNet(ensemble=ensemble, weight_dir=weight_dir)
+
+x = np.random.randint(1,2,(20,10))
+y = np.random.randint(0,3,(20,))
+print(ewsnet.finetune(x,y))
+
+```
+
 
 ----
 
