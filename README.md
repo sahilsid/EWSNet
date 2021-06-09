@@ -79,7 +79,18 @@ y = np.random.randint(0,3,(20,))
 print(ewsnet.finetune(x,y))
 
 ```
+The arguments denote :
+- ***X*** : The data points (univariate timeseries) to finetune EWSNet on. Dimension - (N x D) or (N x 1 x D) where `N` denotes the no. of samples and `D` denotes the no. of time steps.
 
+- ***y*** : The target labels corresponding to the data points (X). Dimension - (N, ) or (N x 1) where `N` denotes the no. of samples.
+
+- ***freeze_feature_extractor*** : A boolean flag that determines the part of the network to be finetuned. When set to False. the entire network is finetuned. When set to True, only the fully connected layers are finetuned and the feature extraction blocks are frozen.
+
+- ***learning_rate*** : The learning rate for finetuning the models.
+
+- ***batch_size*** : The batch size for finetuning the models.
+
+- ***tune_epochs*** : The no. of epochs for finetuning the models.
 
 ----
 
