@@ -107,6 +107,7 @@ def evaluate_model(model: Model, dataset_id, dataset_prefix, batch_size=128, tes
 
     Returns:
         The test set accuracy of the model.
+        
     """
     _, _, X_test, y_test, is_timeseries = load_dataset_at(dataset_id,normalize_timeseries=normalize_timeseries)
 
