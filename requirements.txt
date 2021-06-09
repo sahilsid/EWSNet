@@ -4,3 +4,4 @@ pandas
 matplotlib
 tensorflow-gpu
 sphinxcontrib-matlabdomain
+seaborn

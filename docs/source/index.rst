@@ -39,3 +39,9 @@ Model Training and Evaluation
    :members: train_model, evaluate_model
 
 
+Indices and tables
+===================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
