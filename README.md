@@ -1,6 +1,6 @@
 # EWSNet 
 
-[![DOI](https://zenodo.org/badge/338530625.svg)](https://zenodo.org/badge/latestdoi/338530625)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5027683.svg)](https://doi.org/10.5281/zenodo.5027683)
 
 [![Code Documentation](https://readthedocs.org/projects/pip/badge/?style=for-the-badge)](https://ewsnet.readthedocs.io/en/latest/)
 
