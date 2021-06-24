@@ -128,6 +128,6 @@ for filename in os.listdir(data_dir):
 
 -----
 
-> [Click Here To View Complete Code Documentation](https://readthedocs.org/projects/pip/badge/?version=latest&style=plastic)
+> View The Complete Code Documentation [Here](https://ewsnet.readthedocs.io/en/latest/)
 
 -----
