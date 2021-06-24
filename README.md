@@ -2,6 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/338530625.svg)](https://zenodo.org/badge/latestdoi/338530625)
 
+[![Code Documentation](https://readthedocs.org/projects/pip/badge/?style=for-the-badge)](https://ewsnet.readthedocs.io/en/latest/)
+
+
 ### Setup Instructions
 Create a new conda environment with tensorflow using 
   - If you have a CPU machine
@@ -121,3 +124,10 @@ for filename in os.listdir(data_dir):
     print("----- Predicted Label : ",label)
     print("----- Prediction Probability : \n \t ",prob,"\n")
 ```
+
+
+-----
+
+> [Click Here To View Complete Code Documentation](https://readthedocs.org/projects/pip/badge/?version=latest&style=plastic)
+
+-----
