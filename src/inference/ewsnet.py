@@ -65,12 +65,12 @@ class EWSNet():
         x = np.reshape(x,(1,1,x.shape[0]))
         predictions = np.array([self.model[i](x)[0] for i in range(self.ensemble)])
         predictions = np.mean(predictions,axis=0)
-        predictions = {
+        prediction_probability = {
             "No Transition"      :predictions[0],
             "Smooth Transition"  :predictions[1],
             "Critical Transition":predictions[2],
         }
-        return self.labels[np.argmax(predictions)],predictions
+        return self.labels[np.argmax(predictions)],prediction_probability
 
     def finetune(self,X,y, freeze_feature_extractor=True, learning_rate = 5e-5, batch_size = 512, tune_epochs = 5):
         """
